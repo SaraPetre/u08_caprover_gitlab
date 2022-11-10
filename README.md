@@ -1,4 +1,43 @@
-# Caprover cluster
+# Files provided for this project
+- main.tf
+- inventory.yml
+- caprov-playbook.yml
+- config.json
+- README.md
+- test repo to be forked to be able to show CapRover GitLab app deployed from Gitlab
+
+Create a directory with the above files added.
+
+# elastx
+- Log in to your account with your email and provided password
+- Go into API Access.
+- Go to Download Openstack RC files
+
+![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/api.PNG)
+
+-Move your downloaded file from above into your directory
+
+# VScode
+-open VScode in your directory with the above files.
+In terminal:
+- source 'chasacademy-petre-openrc.sh' (your downloaded file)
+- copy and add your elastx password in the terminal
+
+## Terraform
+In terminal:
+- terraform init
+- terraform apply
+    - yes (to approve the plan an go ahead with apply)
+
+# elastx
+- go back into elastx and see that your setup is completed
+Under instances copy your ipadresses from your server and runner.
+
+![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/instances.PNG)
+
+![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/inventory.PNG)
+
+## Caprover cluster
 SSH:a into server:
 Run:
 -sudo docker swarm join-token worker
@@ -27,6 +66,7 @@ Navigate to cluster. You can now see that you are clustered. Se down below pictu
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/caprover_cluster.PNG)
 
 # Gitlab deployed on CapRover
+https://caprover.com/docs/ci-cd-integration/deploy-from-gitlab.html
 
 1. Create GitLab Repository
 
