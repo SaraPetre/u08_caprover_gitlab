@@ -40,25 +40,26 @@ Under instances copy your ipadresses from your server and runner.
 ## Caprover cluster
 
 Navigate to CapRover and log in. Go to Cluster and scroll down to "Alternative Method:
+Follow the instructions and run the commands in your terminal in VScode.
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/cluster.PNG)
 
-Go back to your VScode terminal.
+In terminal.
 
 SSH:a into server:
 Run:
--sudo docker swarm join-token worker
+- sudo docker swarm join-token worker
 
 Take the output: In my case:
--docker swarm join --token SWMTKN-1-4mp0om0q2vxzvjq4zlaitcqm19hh6vwf4uxm1oxlklsuucxkj4-1eepwoybp0iih0kknle9fjugu 91.197.41.163:2377
+- docker swarm join --token SWMTKN-1-4mp0om0q2vxzvjq4zlaitcqm19hh6vwf4uxm1oxlklsuucxkj4-1eepwoybp0iih0kknle9fjugu 91.197.41.163:2377
 
 Logout from server:
 SSH:a into runner:
 Run the above output command:
--sudo docker swarm join --token SWMTKN-1-4mp0om0q2vxzvjq4zlaitcqm19hh6vwf4uxm1oxlklsuucxkj4-1eepwoybp0iih0kknle9fjugu 91.197.41.163:2377
+- sudo docker swarm join --token SWMTKN-1-4mp0om0q2vxzvjq4zlaitcqm19hh6vwf4uxm1oxlklsuucxkj4-1eepwoybp0iih0kknle9fjugu 91.197.41.163:2377
 
 Output
-This node joined a swarm as a worker.
+T- his node joined a swarm as a worker.
 
 Working =)
 
@@ -79,8 +80,10 @@ https://caprover.com/docs/ci-cd-integration/deploy-from-gitlab.html
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/aras_gitlab-repo.PNG)
 
-2. Add sample Source code-file, Dockerfile and a .gitlab-ci.yml-file
-The files can be seen in this repo.
+2. Add sample Source code-file, Dockerfile and a .gitlab-ci.yml-file. The content ara copied from the documnet:
+https://caprover.com/docs/ci-cd-integration/deploy-from-gitlab.html
+
+The files and content can be seen in this repo.
 
 3. Create CI/CD Variables
 Go to your project page on GitLab, navigate to Settings > CI/CD. Then, under Variables add the following variables:
