@@ -28,7 +28,7 @@ In terminal:
 - terraform init
 - terraform apply
     - yes (to approve the plan an go ahead with apply)
-
+- chmod 600 (on your keypair-file)
 # elastx
 - go back into elastx and see that your setup is completed
 Under instances copy your ipadresses from your server and runner.
@@ -38,6 +38,13 @@ Under instances copy your ipadresses from your server and runner.
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/inventory.PNG)
 
 ## Caprover cluster
+
+Navigate to CapRover and log in. Go to Cluster and scroll down to "Alternative Method:
+
+![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/cluster.PNG)
+
+Go back to your VScode terminal.
+
 SSH:a into server:
 Run:
 -sudo docker swarm join-token worker
@@ -80,7 +87,7 @@ Go to your project page on GitLab, navigate to Settings > CI/CD. Then, under Var
 
 - Key : CAPROVER_URL , Value : https://captain.root.domain.com [replace it with your domain]
 - Key : CAPROVER_PASSWORD , Value : mYpAsSwOrD [replace it with your password]
-- Key : CAPROVER_APP , Value : my-test-gitlab-deploy [replace it with your app name]
+- Key : CAPROVER_APP , Value : my-test-gitlab-deploy [replace it with the app name you want to create]
 
 4.  Create an Access Token for CapRover
 Navigate to https://gitlab.com/-/profile/personal_access_tokens and create a token.
@@ -88,6 +95,7 @@ Navigate to https://gitlab.com/-/profile/personal_access_tokens and create a tok
 Make sure to assign read_registry and write_registry permissions for this token.
 
 5. Add Token to CapRover
+
 Login to your CapRover web dashboard, under Cluster click on Add Remote Registry. Then enter these fields:
 
 - Username: your gitlab username
@@ -96,14 +104,16 @@ Login to your CapRover web dashboard, under Cluster click on Add Remote Registry
 - Image Prefix: again, your gitlab username !!!!I needed this to be blanc for it to work!
 
 6. Disable Default Push
-Now that you added a registry, CapRover by default wants to push the built artifact to your registry. You do not need this for this tutorial, and it might make your deployments to fail. So go ahead and disable Default Push
-!!!! I did not do this step!!!
+Now that you added a registry, CapRover by default wants to push the built artifact to your registry. You do not need this for this project, and it might make your deployments to fail. So go ahead and disable Default Push
+!!!! I did not disable Default push and it worked!
 
 7. Create a CapRover App
 On CapRover "Apps" and create an app:
--aras-gitlab-deploy
+-aras-gitlab-deploy (in my case)
 
 8. Push to your repo
+From your terminal, VSCode.
+-commit and push to your repo. Make sure to commit to master
 Wait a little bit until your build is finished and deployed automatically! After a few minutes you can see your deployed app on CapRover!!!
 
 Open CapRover
