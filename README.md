@@ -38,9 +38,9 @@ The files can be seen in this repo.
 3. Create CI/CD Variables
 Go to your project page on GitLab, navigate to Settings > CI/CD. Then, under Variables add the following variables:
 
-Key : CAPROVER_URL , Value : https://captain.root.domain.com [replace it with your domain]
-Key : CAPROVER_PASSWORD , Value : mYpAsSwOrD [replace it with your password]
-Key : CAPROVER_APP , Value : my-test-gitlab-deploy [replace it with your app name]
+- Key : CAPROVER_URL , Value : https://captain.root.domain.com [replace it with your domain]
+- Key : CAPROVER_PASSWORD , Value : mYpAsSwOrD [replace it with your password]
+- Key : CAPROVER_APP , Value : my-test-gitlab-deploy [replace it with your app name]
 
 4.  Create an Access Token for CapRover
 Navigate to https://gitlab.com/-/profile/personal_access_tokens and create a token.
@@ -50,10 +50,10 @@ Make sure to assign read_registry and write_registry permissions for this token.
 5. Add Token to CapRover
 Login to your CapRover web dashboard, under Cluster click on Add Remote Registry. Then enter these fields:
 
-Username: your gitlab username
-Password: your gitlab Token [From the previous step]
-Domain: registry.gitlab.com
-Image Prefix: again, your gitlab username !!!!I needed this to be blanc for it to work!
+- Username: your gitlab username
+- Password: your gitlab Token [From the previous step]
+- Domain: registry.gitlab.com
+- Image Prefix: again, your gitlab username !!!!I needed this to be blanc for it to work!
 
 6. Disable Default Push
 Now that you added a registry, CapRover by default wants to push the built artifact to your registry. You do not need this for this tutorial, and it might make your deployments to fail. So go ahead and disable Default Push
