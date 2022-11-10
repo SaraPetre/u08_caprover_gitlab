@@ -115,8 +115,10 @@ On CapRover "Apps" and create an app:
 -aras-gitlab-deploy (in my case)
 
 8. Push to your repo
-From your terminal, VSCode.
--commit and push to your repo. Make sure to commit to master
+From VSCode and terminal:
+
+- Make some changes in the index.php-file to trigger the push.
+- commit and push to your repo. Make sure to commit to master
 Wait a little bit until your build is finished and deployed automatically! After a few minutes you can see your deployed app on CapRover!!!
 
 Open CapRover
