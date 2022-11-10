@@ -71,3 +71,7 @@ Navigate to "Apps"
 Click on open on your app.
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/caprover_apps.PNG)
+
+The output from the index.php-file can now be seen:
+
+![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/app_output.PNG)
