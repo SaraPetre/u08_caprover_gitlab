@@ -17,3 +17,4 @@ This node joined a swarm as a worker.
 Working =)
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/caprover_cluster.PNG)
+![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/aras_gitlab-repo.PNG)
