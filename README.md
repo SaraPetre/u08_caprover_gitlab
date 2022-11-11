@@ -40,7 +40,7 @@ Verify the installation
 
 # VScode
 -open VScode in your path/to/your/directory with the above files.
-- open your config.json-file and add your personal Domain, new password, email and caproverName.
+- open your config.json-file and add your personal Domain, new password, email and caproverName(here we have "cap-server").
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/config.PNG)
 
