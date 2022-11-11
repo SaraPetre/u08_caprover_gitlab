@@ -57,7 +57,7 @@ In terminal:
 # Ansible
 
 - Go back into your elastx account to verify that your setup is completed. Do that by checking under 'Compute Overview'. All your setups should now be seen. 
-- Under instances copy your ipadresses from your server and worker, see picture below, and replace the ipadresses in the inventory.yml-file  **inventory.yml**,  see picture down below.
+- Under instances copy your ipadresses from your server and worker, see picture below, and replace the IP-adresses in the inventory.yml-file  **inventory.yml**. Save your changes. See picture down below.
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/instances.PNG)
 
@@ -79,7 +79,7 @@ Set up your DNS:
 
 - To set up the wildcard you need to use your public server IP-adress
 
-- open your config.json-file and add your personal Domain, new password, email and caproverName(here we have "cap-server").
+- open your config.json-file and add your personal Domain, new password and email.
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/config.PNG)
 
@@ -130,11 +130,12 @@ Navigate to cluster. You can now see that you are clustered. Se down below pictu
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/caprover_cluster.PNG)
 
 # Gitlab deployed on CapRover
+
+We have based this Gitlab deployment on CapRover on the down below documentation.
+
 https://caprover.com/docs/ci-cd-integration/deploy-from-gitlab.html
 
-**!!! In this project a test repo is added to use with the files needed, see link down below. The repo should be forked! You can therefore jump to part 3. !!!
-
-https://gitlab.com/SaraPetre/u08_caprover_gitlab**
+**Since this project used a forked repo (https://gitlab.com/SaraPetre/u08_caprover_gitlab), you can jump to part 3. down below!!!**
 
 ### 1. Create GitLab Repository
 
