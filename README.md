@@ -112,7 +112,8 @@ Logout from server:
 
 SSH:a into worker:
 
-Run the above output command that we have copied. Run with sudo:
+Run the above output command that we have copied. Run with sudo!
+
 Example:
 - sudo docker swarm join --token SWMTKN-1-4mp0om0q2vxzvjq4zlaitcqm19hh6vwf4uxm1oxlklsuucxkj4-1eepwoybp0iih0kknle9fjugu 91.197.41.163:2377
 
