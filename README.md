@@ -89,7 +89,9 @@ Run ansible:
 ## CapRover cluster
 
 - In your browser. Navigate to CapRover with your domain name. The domain name can be found in your config.json file "caproverRootDomain" (in my case https://captain.aras.ejo.one/) and log in. 
-- Go to Cluster and scroll down to "Alternative Method:
+- Go to Cluster and add 'Add Self-Hosted Registry', see picture down below.
+![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/cluster#2.PNG)
+-  scroll down to "Alternative Method:
 - Follow the instructions and run the commands in your terminal in VScode.
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/cluster.PNG)
@@ -135,7 +137,7 @@ We have based this Gitlab deployment on CapRover on the down below documentation
 
 https://caprover.com/docs/ci-cd-integration/deploy-from-gitlab.html
 
-**Since this project used a forked repo (https://gitlab.com/SaraPetre/u08_caprover_gitlab), you can jump to part 3. down below!!!**
+**Since this project used a forked repo (https://gitlab.com/SaraPetre/u08_caprover_gitlab), you can jump to part 3, down below!!!**
 
 ### 1. Create GitLab Repository
 
