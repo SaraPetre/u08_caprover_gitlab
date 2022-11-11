@@ -90,7 +90,9 @@ Run ansible:
 
 - In your browser. Navigate to CapRover with your domain name. The domain name can be found in your config.json file "caproverRootDomain" (in my case https://captain.aras.ejo.one/) and log in. 
 - Go to Cluster and add 'Add Self-Hosted Registry', see picture down below.
-![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/cluster#2.PNG)
+
+![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/cluster_2.PNG)
+
 -  scroll down to "Alternative Method:
 - Follow the instructions and run the commands in your terminal in VScode.
 
