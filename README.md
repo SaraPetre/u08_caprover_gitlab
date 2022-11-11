@@ -1,3 +1,6 @@
+# u08: Iac, CMT & Continuous Deployment
+This project have been a teamwork between Daniel Goldmann Lapington, Erik Olsson, Nicklas Thor and Sara Petré
+
 # Files provided for this project
 - main.tf
 - inventory.yml
