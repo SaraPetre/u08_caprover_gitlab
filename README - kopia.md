@@ -5,28 +5,12 @@
 - config.json
 - README.md (pdf)
 
-Create a directory with the above files, main.tf, inventory.yml, caprov-playbook.yml, config.json, README.md (pdf) added.
-From this point we will call this directory (path/to/your/directory)"
+Create a directory with the above files added.
 
 - Fork the test repo down below to be able to show the CapRover GitLab app deployed from Gitlab
     -https://gitlab.com/SaraPetre/u08_caprover_gitlab
 
-# Installation nedded
-### Terraform
-https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
-Use the installation guide for your operator system.
-
-Verify the installation
-- terraform --version
-
-### Ansible
-https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
-
-Depending of the operating system you are using, choose the right installation from the above guide.
-
-Verify the installation
-- ansible --version
 
 # elastx
 - Log in to your account with your email and provided password
@@ -35,11 +19,10 @@ Verify the installation
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/api.PNG)
 
-- Move your downloaded RC-file into your file-directory(path/to/your/directory)
-'chasacademy-petre-openrc.sh' (example of file name)
+- Move your downloaded RC-file into your file-directory
 
 # VScode
--open VScode in your path/to/your/directory with the above files.
+-open VScode in your directory with the above files.
 - open your config.json-file and add your personal Domain, new password, email and caproverName.
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/config.PNG)
@@ -54,10 +37,9 @@ In terminal:
 - terraform init
 - terraform apply
     - yes (to approve the plan an go ahead with apply)
-- chmod 600 caprov_keypair_rsa
+- chmod 600 (on your keypair-file just created)
 
-# Ansible
-
+# elastx
 - Go back into elastx and see that your setup is completed
 - Under instances copy your ipadresses from your server and worker and insert them into the server and worker in **inventory.yml**.
 
@@ -65,17 +47,7 @@ In terminal:
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/inventory.PNG)
 
-Make sure you can ssh into server and worker.
-In terminal
-SSH into server:
-- ssh -i caprov_keypair_rsa ubuntu@xxx.xxx.xxx.xxx (use server ip)
-- exit
-
-SSH into runner:
-- ssh -i caprov_keypair_rsa ubuntu@xxx.xxx.xxx.xxx (use runner ip)
-- exit
-
-## CapRover cluster
+## Caprover cluster
 
 - Navigate to CapRover and log in. (in my case https://captain.aras.ejo.one/)
 - Go to Cluster and scroll down to "Alternative Method:
@@ -93,7 +65,6 @@ Take the output: In my case:
 - docker swarm join --token SWMTKN-1-4mp0om0q2vxzvjq4zlaitcqm19hh6vwf4uxm1oxlklsuucxkj4-1eepwoybp0iih0kknle9fjugu 91.197.41.163:2377
 
 Logout from server:
-- exit
 
 SSH:a into runner:
 
@@ -104,9 +75,6 @@ Output
 - T- his node joined a swarm as a worker.
 
 Working =)
-
-Logout from worker:
-- exit
 
 Navigate back to your Caprover:
 In my case:
@@ -121,37 +89,33 @@ Navigate to cluster. You can now see that you are clustered. Se down below pictu
 # Gitlab deployed on CapRover
 https://caprover.com/docs/ci-cd-integration/deploy-from-gitlab.html
 
-**!!! In this project a test repo is added to use, which is to be forked, with the files needed. You can therefore jump to part 3. !!!
-https://gitlab.com/SaraPetre/u08_caprover_gitlab**
+**!!! In this project a test repo is added to use, which is to be forked, with the files needed. You can therefore yump to part 3. !!!**
 
-### 1. Create GitLab Repository
+1. Create GitLab Repository
 
 ![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/aras_gitlab-repo.PNG)
 
-### 2. Add sample Source code-file, Dockerfile and a .gitlab-ci.yml-file. The content ara copied from the documnet:
+2. Add sample Source code-file, Dockerfile and a .gitlab-ci.yml-file. The content ara copied from the documnet:
 https://caprover.com/docs/ci-cd-integration/deploy-from-gitlab.html
 
 The files and content can be seen in this repo.
 
-### 3. Create CI/CD Variables
-
+3. Create CI/CD Variables
 Go to your project page on GitLab.
-
 Navigate to Settings > CI/CD.
-
 In Variables add the following variables:
 
 - Key : CAPROVER_URL , Value : https://captain.root.domain.com [replace it with your domain]
 - Key : CAPROVER_PASSWORD , Value : mYpAsSwOrD [replace it with your password]
 - Key : CAPROVER_APP , Value : my-test-gitlab-deploy [replace it with the app name you want to create]
 
-### 4.  Create an Access Token for CapRover
+4.  Create an Access Token for CapRover
 Navigate to https://gitlab.com/-/profile/personal_access_tokens and create a token.
 
 Make sure to assign read_registry and write_registry permissions for this token.
 
 
-### 5. Add Token to CapRover
+5. Add Token to CapRover
 
 Login to your CapRover web dashboard, under Cluster click on Add Remote Registry. Then enter these fields:
 
@@ -160,16 +124,15 @@ Login to your CapRover web dashboard, under Cluster click on Add Remote Registry
 - Domain: registry.gitlab.com
 - Image Prefix: again, your gitlab username !!!**I needed this to be blanc for it to work**!!!
 
-### 6. Disable Default Push
-
+6. Disable Default Push
 Now that you added a registry, CapRover by default wants to push the built artifact to your registry. You do not need this for this project, and it might make your deployments to fail. So go ahead and disable Default Push
 **!!!! I did not disable Default push and it worked!**
 
-### 7. Create a CapRover App
+7. Create a CapRover App
 On CapRover "Apps" and create an app:
 - aras-gitlab-deploy (in my case. You need to add the name that you set up in part 3. CAPROVER_APP value)
 
-### 8. Push to your repo
+8. Push to your repo
 From VSCode and terminal:
 
 - Make some changes in the index.php-file to trigger the push.
