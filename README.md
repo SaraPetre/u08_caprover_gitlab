@@ -89,7 +89,7 @@ Navigate to cluster. You can now see that you are clustered. Se down below pictu
 # Gitlab deployed on CapRover
 https://caprover.com/docs/ci-cd-integration/deploy-from-gitlab.html
 
-!!! In this project a test repo is added to use, which is to be forked, with the files needed. You can therefore yump to part 3. !!!!
+**!!! In this project a test repo is added to use, which is to be forked, with the files needed. You can therefore yump to part 3. !!!**
 
 1. Create GitLab Repository
 
