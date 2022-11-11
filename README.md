@@ -25,7 +25,7 @@ Create a directory with the above files added.
 -open VScode in your directory with the above files.
 - open your config.json-file and add your personal Domain, new password, email and caproverName.
 
-![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/config.json.PNG)
+![steg1](https://gitlab.com/SaraPetre/u08_caprover_gitlab/-/raw/master/images/config.PNG)
 
 In terminal:
 - source 'chasacademy-petre-openrc.sh' (your downloaded file)
@@ -78,7 +78,7 @@ Working =)
 
 Navigate back to your Caprover:
 In my case:
--https://captain.aras.ejo.one/#/login
+https://captain.aras.ejo.one/#/login
 - Log in with your password
 
 Navigate to cluster. You can now see that you are clustered. Se down below picture:
@@ -101,7 +101,9 @@ https://caprover.com/docs/ci-cd-integration/deploy-from-gitlab.html
 The files and content can be seen in this repo.
 
 3. Create CI/CD Variables
-Go to your project page on GitLab, navigate to Settings > CI/CD. Then, under Variables add the following variables:
+Go to your project page on GitLab.
+Navigate to Settings > CI/CD.
+In Variables add the following variables:
 
 - Key : CAPROVER_URL , Value : https://captain.root.domain.com [replace it with your domain]
 - Key : CAPROVER_PASSWORD , Value : mYpAsSwOrD [replace it with your password]
@@ -120,15 +122,15 @@ Login to your CapRover web dashboard, under Cluster click on Add Remote Registry
 - Username: your gitlab username
 - Password: your gitlab Token [From the previous step]
 - Domain: registry.gitlab.com
-- Image Prefix: again, your gitlab username !!!!I needed this to be blanc for it to work!
+- Image Prefix: again, your gitlab username !!!**I needed this to be blanc for it to work**!!!
 
 6. Disable Default Push
 Now that you added a registry, CapRover by default wants to push the built artifact to your registry. You do not need this for this project, and it might make your deployments to fail. So go ahead and disable Default Push
-!!!! I did not disable Default push and it worked!
+**!!!! I did not disable Default push and it worked!**
 
 7. Create a CapRover App
 On CapRover "Apps" and create an app:
--aras-gitlab-deploy (in my case. You need to add the name that you set up in part 3. CAPROVER_APP value)
+- aras-gitlab-deploy (in my case. You need to add the name that you set up in part 3. CAPROVER_APP value)
 
 8. Push to your repo
 From VSCode and terminal:
