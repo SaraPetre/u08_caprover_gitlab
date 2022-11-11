@@ -104,7 +104,7 @@ SSH:a into server:
 Run:
 - sudo docker swarm join-token worker
 
-Take the output: In my case:
+Copy the output: In my case:
 - docker swarm join --token SWMTKN-1-4mp0om0q2vxzvjq4zlaitcqm19hh6vwf4uxm1oxlklsuucxkj4-1eepwoybp0iih0kknle9fjugu 91.197.41.163:2377
 
 Logout from server:
@@ -112,7 +112,8 @@ Logout from server:
 
 SSH:a into worker:
 
-Run the above output command:
+Run the above output command that we have copied. Run with sudo:
+Example:
 - sudo docker swarm join --token SWMTKN-1-4mp0om0q2vxzvjq4zlaitcqm19hh6vwf4uxm1oxlklsuucxkj4-1eepwoybp0iih0kknle9fjugu 91.197.41.163:2377
 
 Output
@@ -163,7 +164,7 @@ In Variables add the following variables:
 - Key : CAPROVER_APP , Value : my-test-gitlab-deploy [replace it with the app name you want to create]
 
 ### 4.  Create an Access Token for CapRover
-Navigate to https://gitlab.com/-/profile/personal_access_tokens and create a token.
+Navigate to https://gitlab.com/-/profile/personal_access_tokens and create a token. Give it a appropriate name.
 
 Make sure to assign read_registry and write_registry permissions for this token.
 
