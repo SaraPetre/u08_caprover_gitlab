@@ -1,0 +1,107 @@
+u08: Iac, CMT & Continuous Deployment
+Inlämningsdatum 13 nov 2022 av 23.59 Poäng 10 Lämnar in en filuppladdning Filtyper tar, tar.gz, tar.bz och tar.xz Försök 1 Tillåtna försök 1
+Grunderna inom det moderna molnet: Deliverable
+
+Your task for this deliverable is to set up a CapRover cluster (cluster ==
+minimum 2 nodes), and to showcase Continuous Deployment with GitLab.
+
+
+The deliverable can be divided into the following parts:
+
+
+Part 1 - Infrastructure as Code and Configuration Management
+
+Use Terraform for IaC and Ansible for CM to provision the needed infrastructure
+and configuration to get a working CapRover cluster up-and-running from scratch.
+
+
+Use your ElastX account(s) for the IaaS.
+
+
+The following files are required:
+
+
+• a terraform file
+• an ansible inventory file
+• an ansible playbook file
+
+
+Allocate a floating ip for each instance you spin up.
+
+
+Make sure your security groups are configured in accordance with what
+CapRover’s documentation says (i.e. which ports does CapRover need opened?).
+
+
+The only manual step allowed is joining the rest of the hosts to the first CapRover
+instance to create a cluster (you can still automate this part if you have time).
+
+
+Terraform file
+I will test your terraform file by running:
+
+
+terraform init && terraform apply
+There should be no other manual steps required for the provisioning of the
+infrastructure.
+
+Ansible files
+I will manually edit the inventory file with the floating ips I get when testing
+your deliverable. The playbook should work “as-is” instead.
+
+
+A note on HTTPS, DNS records and Terraform use
+Your CapRover cluster is supposed to have HTTPS in place, and be reachable
+via a public subdomain.
+
+
+As you’ll notice reading the CapRover documentation, to achieve this you’ll need
+a so-called wildcard dns record. I will set a wildcard record for a subdomain
+1on mine for you (write on Slack once you have the public ip and I’ll create the
+record).
+
+DNS records take a while to propagate, so if you for example run a terraform
+destroy and then terraform apply again, you might get a new public floating
+ip. This means CapRover may not be able to work with certbot to fix HTTPS
+correctly.
+
+My suggestion would be to FIRST have the terraform file in place, make sure
+all works as intended, and THEN set the DNS record, and always use the same
+floating ip for your main instance.
+
+If you still need to take away everything and re-create it with terraform, in-
+stead of running terraform destroy, simply comment out everything but the
+floating ip, run terraform apply to remove everything you commented from
+the infrastructure, and then remove the comments to re-create all the resources.
+This way you never get a new floating ip.
+
+
+Part 2 - Continuous Deployment showcase
+Include in your deliverable a directory containing a small demo-repository for
+Continuous Deployment with GitLab CI.
+
+
+I should be able to fork the repository and use it to continuously deploy to
+CapRover via GitLab CI.
+
+
+You don’t need to setup a self-hosted GitLab, you can use gitlab.com instead
+(that’s what I’ll use when testing the repo).
+
+Make sure to document in your repo how I can setup the continuous deployment
+with CapRover.
+
+
+You can use whichever “application” you want for the repo. The hello-world php
+example in the official CapRover documentation can be used as-is, for example.
+Or set up CD for a python repo you used previously, etc. . .
+
+
+How to deliver it all
+Upload an archive .tar.[gz|bz|xz] with all the needed parts:
+
+documentation
+terraform file
+ansible inventory
+ansible playbook
+repo for showcasing continuous deployment (include all the files in the archive, no link to the repo)
