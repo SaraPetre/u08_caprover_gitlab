@@ -1,0 +1,57 @@
+---
+- name: Standard Setup
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Remove old DNS config
+    ansible.builtin.shell: 
+      cmd: sed -i '21d' /etc/resolv.conf
+  - name: Add new DNS config
+    ansible.builtin.shell: 
+      cmd: sed -i '21i\nameserver 8.8.8.8\' /etc/resolv.conf
+  - name: Update machines
+    ansible.builtin.apt:
+      name: '*'
+      state: latest
+      update_cache: true
+  - name: Install Docker
+    ansible.builtin.apt:
+      pkg:
+        - docker
+        - docker-compose
+        - docker-registry
+        - docker.io
+  - name: Check Docker Version
+    ansible.builtin.shell:
+      cmd: docker --version
+
+
+
+
+- name: Install Caprov-Server
+  hosts: caprov_server
+  become: yes
+
+  tasks:
+  - name: Add config file to Caprov-Server
+    ansible.builtin.copy:
+      src: ./config.json
+      dest: /etc/config.json
+  - name: Install prerequisites
+    ansible.builtin.apt:
+      pkg:
+        - npm
+        - ufw
+  - name: Fix Firewall
+    ansible.builtin.shell: 
+      cmd: ufw allow 80,443,3000,996,7946,4789,2377/tcp; ufw allow 7946,4789,2377/udp
+  - name: Install serversetup
+    ansible.builtin.shell:
+      cmd: npm install -g caprover
+  - name: Run Caprover
+    ansible.builtin.shell:
+      cmd: docker run -p 80:80 -p 443:443 -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -v /captain:/captain caprover/caprover || true
+  - name: Caprover serversetup
+    ansible.builtin.shell:
+      cmd: caprover serversetup -c /etc/config.json
