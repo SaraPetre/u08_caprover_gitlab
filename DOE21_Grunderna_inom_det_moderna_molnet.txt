@@ -1,0 +1,43 @@
+DOE21 Grunderna inom det moderna molnet
+Kurs: Grunderna inom det moderna molnet
+
+ 
+
+Antal poäng: 30 YHP 
+
+ 
+
+Kursens innehåll
+
+ 
+
+Kursens syfte är att ge de studerande de kunskaper inom det moderna molnet som krävs för att starta sin yrkesbana inom området. De studerande ska visa att de behärskar grundläggande begrepp och termer, att de har en översikt över de relevanta globala spelarna inom området, att de vet hur man tänker kring molnapplikationer för att undvika inlåsning, samt begynnande konkreta färdigheter inom OpenStack som är det leverantörsneutrala alternativet för organisationer med hög krav på GDPR efterlevnad och möjlighet att flytta sina applikationer mellan leverantörer utan inlåsningsrisk. 
+
+ 
+
+Mål
+
+Efter kursen skall de studerande ha följande kunskaper, färdigheter och kompetenser: 
+
+ 
+
+Kunskaper
+
+Veta om vilka de relevanta globala spelarna inom området
+Redogöra för för- och nackdelar samt konsekvenser med olika typer av molnleverantörer
+Veta hur man undviker inlåsningseffekter med hjälp av opensource verktyg och neutrala molnleverantörer 
+Veta hur man undviker problem med GDPR efterlevnad genom att kategorisera information och därefter förlägga den i rätt jurisdiktion
+ 
+
+Färdigheter
+
+Sätta upp en molnlösning på OpenStack
+Automatisera uppsättning av molnlösning på OpenStack med hjälp av Ansible och Terraform
+Konfigurera routing och security policies i OpenStack 
+Säkra en molninstallation
+ 
+
+Kompetenser
+
+Planera för en molnplattform med avseende på komponenter, operativsystem och applikationer
+Grundläggande administration och drift av molnplattformen 
